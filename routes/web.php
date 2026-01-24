@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeaderController;
+use App\Http\Controllers\AboutusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,25 @@ Route::middleware('auth')->group(function () {
     // Delete Header
     Route::delete('/header/delete/{id}', [HeaderController::class, 'deleteHeader'])
         ->name('header.delete');
+
+
+    //Aboutus Route
+    Route::get('/aboutus', [AboutusController::class, 'showAboutus'])
+        ->name('aboutus');
+
+    Route::get('/aboutus/add', [AboutusController::class, 'addAbout'])
+        ->name('aboutus.add');
+
+    Route::post('/aboutus/store', [AboutusController::class, 'storeAbout'])->name('aboutus.store');
+
+    Route::get('/aboutus/edit/{id}', [AboutusController::class, 'editAbout'])
+        ->name('aboutus.edit');
+
+    Route::put('/aboutus/update/{id}', [AboutusController::class, 'updateAbout'])
+        ->name('aboutus.update');
+
+    // Delete About Us
+    Route::delete('/aboutus/delete/{id}', [AboutusController::class, 'deleteAbout'])->name('aboutus.delete');
 
     Route::post('/logout', [AuthController::class, 'logout'])
         ->name('logout');

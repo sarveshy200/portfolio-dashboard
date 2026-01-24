@@ -14,8 +14,8 @@
             <i class="fa-solid fa-window-maximize mr-3 text-lg w-6 text-center"></i> Header Section
         </a>
 
-        <a href="#" 
-           class="flex items-center p-3 text-sm font-medium rounded-lg transition {{ Request::routeIs('about*') ? 'bg-indigo-600 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
+        <a href="{{ route('aboutus') }}" 
+           class="flex items-center p-3 text-sm font-medium rounded-lg transition {{ Request::routeIs('aboutus*') ? 'bg-indigo-600 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             <i class="fa-solid fa-address-card mr-3 text-lg w-6 text-center"></i> About Us
         </a>
 
