@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\SkillsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,16 @@ Route::middleware('auth')->group(function () {
 
     // Delete About Us
     Route::delete('/aboutus/delete/{id}', [AboutusController::class, 'deleteAbout'])->name('aboutus.delete');
+
+
+
+    // Skills Routes
+    Route::get('/skills', [SkillsController::class, 'showSkills'])->name('skills');
+    Route::get('/skills/add', [SkillsController::class, 'addSkill'])->name('skills.add');
+    Route::post('/skills/store', [SkillsController::class, 'storeSkill'])->name('skills.store');
+    Route::get('/skills/edit/{id}', [SkillsController::class, 'editSkill'])->name('skills.edit');
+    Route::put('/skills/update/{id}', [SkillsController::class, 'updateSkill'])->name('skills.update');
+    Route::delete('/skills/delete/{id}', [SkillsController::class, 'deleteSkill'])->name('skills.delete');
 
     Route::post('/logout', [AuthController::class, 'logout'])
         ->name('logout');

@@ -77,7 +77,7 @@
                 lengthMenu: "Show _MENU_ entries"
             },
             columnDefs: [
-                { orderable: false, targets: 3 } // Disable sorting on the Actions column
+                { orderable: false, targets: 3 } 
             ]
         });
     });

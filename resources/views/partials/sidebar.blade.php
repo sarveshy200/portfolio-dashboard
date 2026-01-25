@@ -19,7 +19,7 @@
             <i class="fa-solid fa-address-card mr-3 text-lg w-6 text-center"></i> About Us
         </a>
 
-        <a href="#" 
+        <a href="{{ route('skills') }}" 
            class="flex items-center p-3 text-sm font-medium rounded-lg transition {{ Request::routeIs('skills*') ? 'bg-indigo-600 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             <i class="fa-solid fa-screwdriver-wrench mr-3 text-lg w-6 text-center"></i> Skills
         </a>
