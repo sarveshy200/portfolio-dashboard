@@ -8,6 +8,7 @@ use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -174,6 +175,34 @@ Route::middleware('auth')->group(function () {
         Route::delete('/delete/{id}', [ExperienceController::class, 'deleteExperience'])
             ->name('experience.delete');
     });
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Projects
+    |--------------------------------------------------------------------------
+    */
+    Route::prefix('projects')->group(function () {
+
+        Route::get('/', [ProjectController::class, 'showProjects'])
+            ->name('projects');
+
+        Route::get('/add', [ProjectController::class, 'addProjects'])
+            ->name('project.add');
+
+        Route::post('/store', [ProjectController::class, 'storeProjects'])
+            ->name('project.store');
+
+        Route::get('/edit/{id}', [ProjectController::class, 'editProjects'])
+            ->name('project.edit');
+
+        Route::put('/update/{id}', [ProjectController::class, 'updateProjects'])
+            ->name('project.update');
+
+        Route::delete('/delete/{id}', [ProjectController::class, 'deleteProjects'])
+            ->name('project.delete');
+    });
+
 
 
     /*

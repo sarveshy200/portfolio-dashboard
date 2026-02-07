@@ -34,15 +34,10 @@
             <i class="fa-solid fa-briefcase mr-3 text-lg w-6 text-center"></i> Experience
         </a>
 
-        <a href="#" 
+        <a href="{{ route('projects') }}" 
            class="flex items-center p-3 text-sm font-medium rounded-lg transition {{ Request::routeIs('projects*') ? 'bg-indigo-600 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             <i class="fa-solid fa-code mr-3 text-lg w-6 text-center"></i> Projects
         </a>
 
-        <a href="#" 
-           class="flex items-center p-3 text-sm font-medium rounded-lg transition {{ Request::routeIs('achievements*') ? 'bg-indigo-600 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
-            <i class="fa-solid fa-trophy mr-3 text-lg w-6 text-center"></i> Achievements
-        </a>
-        
     </nav>
 </aside>
