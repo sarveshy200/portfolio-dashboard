@@ -96,9 +96,12 @@
             </tr>
         @empty
             <tr>
-                <td colspan="4" class="text-center py-10 text-gray-400">
-                    No projects found. Start by adding one 🚀
+                <td></td>
+                <td class="text-center py-10 text-gray-400 font-semibold">
+                    No projects found 🚀
                 </td>
+                <td></td>
+                <td></td>
             </tr>
         @endforelse
 
