@@ -38,6 +38,11 @@
            class="flex items-center p-3 text-sm font-medium rounded-lg transition {{ Request::routeIs('projects*') ? 'bg-indigo-600 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             <i class="fa-solid fa-code mr-3 text-lg w-6 text-center"></i> Projects
         </a>
+        <a href="{{ route('contact.index') }}" 
+            class="flex items-center p-3 text-sm font-medium rounded-lg transition {{ Request::routeIs('contact*') ? 'bg-indigo-600 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
+                <i class="fa-solid fa-envelope mr-3 text-lg w-6 text-center"></i> Contact Inquiries
+        </a>
+
 
     </nav>
 </aside>

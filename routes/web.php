@@ -9,6 +9,7 @@ use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ContactInquiryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,8 @@ Route::middleware('guest')->group(function () {
     // Handle Login Form Submit
     Route::post('/login', [AuthController::class, 'login']);
 });
-
+Route::post('/contact/store', [ContactInquiryController::class, 'store'])
+    ->name('contact.store');
 
 /*
 |--------------------------------------------------------------------------
@@ -202,6 +204,25 @@ Route::middleware('auth')->group(function () {
         Route::delete('/delete/{id}', [ProjectController::class, 'deleteProjects'])
             ->name('project.delete');
     });
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Contact Inquiry Routes
+    |--------------------------------------------------------------------------
+    */
+    Route::prefix('contact')->group(function () {
+
+        Route::get('/', [ContactInquiryController::class, 'index'])
+            ->name('contact.index');
+
+        Route::get('/view/{id}', [ContactInquiryController::class, 'view'])
+            ->name('contact.view');
+
+        Route::delete('/delete/{id}', [ContactInquiryController::class, 'delete'])
+            ->name('contact.delete');
+    });
+
 
 
 

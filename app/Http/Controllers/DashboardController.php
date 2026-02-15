@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\ContactInquiry;
 
 class DashboardController extends Controller
 {
     public function showDashboard()
     {
-        return view('dashboard');
+        $totalProjects = Project::count();
+        $totalContacts = ContactInquiry::count();
+
+        return view('dashboard', compact(
+            'totalProjects',
+            'totalContacts'
+        ));
     }
 }
